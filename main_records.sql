@@ -1,0 +1,11 @@
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (1, 1, 1, 5, 10, 4, 60, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (2, 2, 2, 5, 10, 3, 70, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (3, 3, 3, 5, 10, 2, 80, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (4, 4, 4, 5, 10, 1, 90, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (5, 5, 5, 5, 10, 0, 100, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (6, 6, 1, 5, 10, 4, 60, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (7, 7, 2, 5, 10, 3, 70, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (8, 8, 3, 5, 10, 2, 80, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (9, 9, 4, 5, 10, 1, 90, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (10, 10, 5, 5, 10, 0, 100, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');
+INSERT INTO records (id, tid, right_num, wrong_num, total_num, remainder, degree, total_time, uid) VALUES (11, 11, 1, 5, 10, 4, 60, 60, 'c4bdcfc2cb9a43629b18b86e397a89cf');

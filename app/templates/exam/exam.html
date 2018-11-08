@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+    <div class="col-lg-12">
+    {%import 'exam/pages.html' as pg%}
+    {{pg.my_paginate(libs)}}
+    <!--
+
+    -->
+    </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/css/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}">
+    <style>
+    @font-face {
+	font-family: 'anyoldicon';
+	src: url('{{ url_for("static", filename="fonts/iconfont.eot") }}'); /* IE9*/
+    src: url('{{ url_for("static", filename="fonts/iconfont.eot") }}#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('{{ url_for("static", filename="fonts/iconfont.woff") }}') format('woff'), /* chrome, firefox */
+    url('{{ url_for("static", filename="fonts/iconfont.ttf") }}') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('{{ url_for("static", filename="fonts/iconfont.svg") }}#iconfont') format('svg'); /* iOS 4.1- */
+	font-weight: normal;
+	font-style: normal;
+}
+
+    </style>
+{% endblock %}
+{% block content %}
+<div class="main">
+	<ul class="cbp-ig-grid">
+        {% if type == 1 %}
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=1,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">飞行手册</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=2,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">飞行原理与性能</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=3,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">概述</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=4,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">空域 法规</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=5,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">综合问答</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=6,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">起降操纵</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        <li>
+			<a href="{{ url_for('examination',type=1,tid=7,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">气象</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=8,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">任务规划</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=9,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">系统组成与介绍</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        <li>
+			<a href="{{ url_for('examination',type=1,tid=10,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">综合</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=1,tid=11,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">多旋翼</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        {% elif type==2 %}
+        <li>
+			<a href="{{ url_for('examination',type=2,tid=1,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">飞行手册</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=2,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">飞行原理与性能</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=3,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">概述</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=4,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">空域 法规</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=5,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">综合问答</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=6,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">起降操纵</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        <li>
+			<a href="{{ url_for('examination',type=2,tid=7,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">气象</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=8,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">任务规划</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=9,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">系统组成与介绍</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        <li>
+			<a href="{{ url_for('examination',type=2,tid=10,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">综合</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+		<li>
+			<a href="{{ url_for('examination',type=2,tid=11,page=1) }}">
+				<span class="cbp-ig-icon icon-hangpai"></span>
+				<h3 class="cbp-ig-title">多旋翼</h3>
+				<span class="cbp-ig-category">Start</span>
+			</a>
+		</li>
+        {% endif %}
+
+	</ul>
+</div>
+{% endblock %}

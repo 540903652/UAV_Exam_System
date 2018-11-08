@@ -1,0 +1,22 @@
+{% extends 'auth/login.html' %}
+{% block content %}
+    <div class="login" style="height: 600px">
+        <div class="login_logo"><a href="#"><img src="{{ url_for('static', filename='imgs/login_logo.png') }}" /></a></div>
+        <div class="login_name">
+            <p> 无人机测试系统 </p>
+        </div>
+
+        <div class="form-wrap">
+            <form action="{{ url_for('register') }}" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.email.label }}{{ form.email() }}
+                {{ form.username.label }}{{ form.username() }}
+                {{ form.password.label }}{{ form.password() }}
+                {{ form.password2.label }}{{ form.password2() }}
+                <i class="btn btn-info" style="width:100%;">
+                {{ form.submit() }}
+                </i>
+            </form>
+        </div>
+    </div>
+{% endblock %}

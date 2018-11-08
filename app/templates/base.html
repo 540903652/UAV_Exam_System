@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin Free Bootstrap-4 Admin Dashboard Template</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendors/css/vendor.bundle.addons.css') }}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.png') }}" />
+    {% block css %}
+    {% endblock %}
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+
+    <!--使用中文,默认是英语的-->
+    {{ moment.lang("zh-CN") }}
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='imgs/logo.svg') }}" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='imgs/logo-mini.svg') }}" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="mdi mdi-format-align-justify"></i>Introduce
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="#" class="nav-link">
+                <i class="mdi mdi-elevation-rise"></i>Achievement
+                <span class="badge badge-primary ml-1">New</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <span class="profile-text">{{ moment().format('YYYY年M月D日, h:mm:ss a') }}.</span>
+          </li>
+          <li class="nav-item dropdown d-none d-xl-inline-block">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                {% if current_user.is_authenticated %}
+              <span class="profile-text">Hello, {{ current_user.username }} !</span>
+              <img class="img-xs rounded-circle" src="{{ url_for('static',filename='imgs/faces/face1.jpg') }}" alt="Profile image">
+                {% else %}
+                    <span class="profile-text">请先登录</span>
+                    <img class="img-xs rounded-circle" src="{{ url_for('static',filename='imgs/favicon.png') }}" alt="Profile image">
+                {% endif %}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                {% if current_user.is_authenticated %}
+                    <a class="dropdown-item p-0">
+                        <div class="d-flex border-bottom">
+                            <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                                <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
+                            </div>
+                            <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
+                                <i class="mdi mdi-account-outline mr-0 text-gray"></i>
+                            </div>
+                            <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                                <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="dropdown-item mt-2">
+                        Manage Accounts
+                    </a>
+                    <a class="dropdown-item">
+                        Change Password
+                    </a>
+                    <a class="dropdown-item">
+                        Check Inbox
+                    </a>
+                    <a class="dropdown-item" href="{{ url_for('logout') }}">
+                        Sign Out
+                    </a>
+                {% else %}
+                    <a class="dropdown-item mt-2" href="{{ url_for('login_page') }}">Sign In</a>
+                    <a class="dropdown-item mt-2" href="{{ url_for('register_page') }}">Sign Up</a>
+                {% endif %}
+
+
+             </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+                {% if current_user.is_authenticated %}
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="{{ url_for('static',filename='imgs/faces/face1.jpg') }}" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">{{ current_user.username }}</p>
+                  <div>
+                    <small class="designation text-muted">{{ current_user.role.name }}</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+                {% else %}
+                <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="{{ url_for('static',filename='imgs/favicon.png') }}" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">未登录</p>
+                  <div>
+                    <small class="designation text-muted">Customer</small>
+                    <span class="status-indicator offline"></span>
+                  </div>
+                </div>
+              </div>
+                {% endif %}
+              <button class="btn btn-success btn-block">Start Examination
+                <i class="mdi mdi-monitor-multiple"></i>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('examination', type=3, tid=0,page=1) }}">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">模拟考试</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-content-copy"></i>
+              <span class="menu-title">章节测试</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('test_Order') }}">顺序测验</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('test_Random') }}">随机测验</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('error_manager') }}">
+              <i class="menu-icon mdi mdi-backup-restore"></i>
+              <span class="menu-title">错题管理</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('history') }}">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">历史数据</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018
+              <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with
+              <i class="mdi mdi-heart text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{ url_for('static',filename='vendors/js/vendor.bundle.base.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/js/vendor.bundle.addons.js') }}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="{{ url_for('static',filename='js/off-canvas.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/misc.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery-3.3.1.js') }}"></script>
+  {% block js %}
+  {% endblock %}
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
